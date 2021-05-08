@@ -1,0 +1,3 @@
+proj.android/bin/*
+proj.android/libs/armeabi/*.so
+proj.android/obj/*
