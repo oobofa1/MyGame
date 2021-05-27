@@ -26,6 +26,8 @@ bool HelloWorld::init()
     {
         return false;
     }
+
+    this -> setKeypadEnabled(true);
     
     CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
     CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
@@ -88,3 +90,13 @@ void HelloWorld::menuCloseCallback(CCObject* pSender)
 #endif
 #endif
 }
+
+void HelloWorld::keyBackClicked() {
+    CCLog("back clicked --------");
+    menuCloseCallback(NULL);
+}
+
+void HelloWorld::keyMenuClicked() {
+    CCLog("menu clicked  --------");
+}
+
