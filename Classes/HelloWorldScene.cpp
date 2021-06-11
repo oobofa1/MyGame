@@ -12,7 +12,6 @@ CCScene* HelloWorld::scene()
 
     // add layer as a child to scene
     scene->addChild(layer);
-
     // return the scene
     return scene;
 }
@@ -28,10 +27,14 @@ bool HelloWorld::init()
     }
 
     this -> setKeypadEnabled(true);
+    // this -> schedule(schedule_selector(HelloWorld::updateGame));
+    this -> schedule(schedule_selector(HelloWorld::update));
     
     CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
     CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
 
+    CCLog("visibleSize.width:%f , visibleSize.height:%f",visibleSize.width,visibleSize.height);
+    CCLog("origin.x: %f , origin.y:%f ",origin.x ,origin.y);
     /////////////////////////////
     // 2. add a menu item with "X" image, which is clicked to quit the program
     //    you may modify it.
@@ -74,7 +77,7 @@ bool HelloWorld::init()
 
     // add the sprite as a child to this layer
     this->addChild(pSprite, 0);
-    
+
     return true;
 }
 
@@ -91,12 +94,24 @@ void HelloWorld::menuCloseCallback(CCObject* pSender)
 #endif
 }
 
-void HelloWorld::keyBackClicked() {
+void HelloWorld::keyBackClicked()
+{
     CCLog("back clicked --------");
     menuCloseCallback(NULL);
 }
 
-void HelloWorld::keyMenuClicked() {
+void HelloWorld::keyMenuClicked()
+{
     CCLog("menu clicked  --------");
 }
 
+void HelloWorld::updateGame()
+{
+    CCLog("updateGame");
+}
+
+int i = 0;
+void HelloWorld::update(float dt)
+{
+    if(i++ % 60 == 0)   CCLog("i:%d",i++);
+}

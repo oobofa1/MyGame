@@ -7,8 +7,29 @@ LOCAL_MODULE := cocos2dcpp_shared
 LOCAL_MODULE_FILENAME := libcocos2dcpp
 
 LOCAL_SRC_FILES := hellocpp/main.cpp \
-                   ../../Classes/AppDelegate.cpp \
-                   ../../Classes/HelloWorldScene.cpp
+../../Classes/AppDelegate.cpp \
+../../Classes/HelloWorldScene.cpp \
+../../Classes/BackgroundLayer.cpp \
+../../Classes/Bullet.cpp \
+../../Classes/Cannon.cpp \
+../../Classes/CannonLayer.cpp \
+../../Classes/Counter.cpp \
+../../Classes/Fish.cpp \
+../../Classes/FishingJoyData.cpp \
+../../Classes/FishingNet.cpp \
+../../Classes/FishLayer.cpp \
+../../Classes/GameScene.cpp \
+../../Classes/GoldCounterLayer.cpp \
+../../Classes/MenuLayer.cpp \
+../../Classes/PanelLayer.cpp \
+../../Classes/PersonalAudioEngine.cpp \
+../../Classes/ProgressBar.cpp \
+../../Classes/ScheduleCountDown.cpp \
+../../Classes/StartScene.cpp \
+../../Classes/StaticData.cpp \
+../../Classes/TouchLayer.cpp \
+../../Classes/Weapon.cpp
+
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes
 
