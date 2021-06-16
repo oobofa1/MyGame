@@ -30,12 +30,13 @@ bool CannonLayer::init()
 void CannonLayer::switchCannon(CCMenuItemSprite* sender)
 {
     CannonType type = _weapon->getCannon()->getType();
+    int temp = (int)type;
     if(sender == _addItem){
-        type++;
+        temp++;
     }else if(sender == _subItem){
-        type--;
+        temp--;
     }
-    _weapon->getCannon()->setType(type);
+    _weapon->getCannon()->setType((CannonType)temp);
 }
 void CannonLayer::aimAt(CCPoint target)
 {

@@ -14,6 +14,7 @@
 #include "FishingJoyData.h"
 USING_NS_CC;
 using namespace CocosDenshion;
+
 CCScene* StartLayer::scene()
 {
     CCScene* scene = CCScene::create();
@@ -92,7 +93,10 @@ void StartLayer::cacheInit()
 void StartLayer::initializationCompleted()
 {
     CCSize winSize = CCDirector::sharedDirector()->getWinSize();
-    CCMenuItemSprite* start = CCMenuItemSprite::create(CCSprite::createWithSpriteFrameName(STATIC_DATA_STRING("start_normal")), CCSprite::createWithSpriteFrameName(STATIC_DATA_STRING("start_selected")), this, menu_selector(StartLayer::transition));
+    CCMenuItemSprite* start = CCMenuItemSprite::create( CCSprite::createWithSpriteFrameName(STATIC_DATA_STRING("start_normal")), 
+                                                        CCSprite::createWithSpriteFrameName(STATIC_DATA_STRING("start_selected")), 
+                                                        this, 
+                                                        menu_selector(StartLayer::transition));
     CCMenu* menu = CCMenu::create(start, NULL);
     menu->setPosition(CCPointMake(winSize.width*0.5, winSize.height*0.4));
     

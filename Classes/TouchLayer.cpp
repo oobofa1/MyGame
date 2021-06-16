@@ -31,6 +31,7 @@ void TouchLayer::ccTouchEnded(CCTouch* touch, CCEvent* event)
 {
     this->getGameScene()->cannonShootTo(this->locationFromTouch(touch));
 }
+bool m_bIsTouchEnabled = false;
 void TouchLayer::setTouchEnabled(bool flag)
 {
     if (m_bIsTouchEnabled != flag){
